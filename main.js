@@ -1,6 +1,9 @@
 const display=document.getElementById("display")
-
+ display.value = "0"
 function appendToDisplay(input){
+    if (display.value === "Error" || display.value === "0" || display.value === "undefined" || display.value === "Welcome To Code Spark") {
+        display.value = "";
+    }
     display.value += input;
 }
 
@@ -9,7 +12,9 @@ function ClearDisplay(){
 }
 
 function calculate(){
-    
+    if (display.value === "Welcome To Code Spark" || display.value === "Error" || display.value === "") {
+        display.value = "0";
+    }
     try{
         display.value = eval(display.value);
     }
